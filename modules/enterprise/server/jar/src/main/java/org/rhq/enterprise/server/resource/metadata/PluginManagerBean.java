@@ -346,7 +346,7 @@ public class PluginManagerBean implements PluginManagerLocal {
 
         List<ResourceType> deletedServerTypes = resourceTypeMgr.findResourceTypesByCriteria(subject, criteria);
 
-        // Do this type by type in an effort to keep chunks smaller. 
+        // Do this type by type in an effort to keep chunks smaller.
         for (ResourceType deletedServerType : deletedServerTypes) {
             deleteResourcesForType(subject, deletedServerType);
         }
@@ -490,6 +490,7 @@ public class PluginManagerBean implements PluginManagerLocal {
 
             // now remove any obsolete types from the newly registered plugin
             resourceMetadataManager.removeObsoleteTypes(subjectMgr.getOverlord(), plugin.getName(), metadataManager);
+            resourceMetadataManager.removeObsoleteSubCategories(subjectMgr.getOverlord(), null, null);
         }
 
         long endTime = System.currentTimeMillis();

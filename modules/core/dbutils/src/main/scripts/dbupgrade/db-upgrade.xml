@@ -2334,7 +2334,7 @@
 
 <!-- RHQ 4.11.0 uses DB Schema 2.146 -->
 
-		<schemaSpec version="2.147">
+		<!--schemaSpec version="2.147">
             <schema-directSQL>
               <statement desc="Creating table RHQ_RESOURCE_TYPE_SUBCATS">
                 CREATE TABLE RHQ_RESOURCE_TYPE_SUBCATS (
@@ -2368,7 +2368,7 @@
 
            <schema-javaTask className="SubcategoryUpgradeTask" />
 
-          </schemaSpec>
+          </schemaSpec-->
         </dbupgrade>
     </target>
 </project>

@@ -2309,6 +2309,19 @@
                 <schema-addColumn   table="RHQ_AGENT_INSTALL" column="SSH_PASSWORD" columnType="VARCHAR2" precision="4000" />
             </schemaSpec>
 
+            <schemaSpec version="2.145">
+              <schema-directSQL>
+                <statement targetDBVendor="postgresql" desc="Adding metrics cache table activation time">
+                  INSERT INTO rhq_system_config (id, property_key, property_value, default_property_value, fread_only)
+                  VALUES (65, 'METRICS_CACHE_ACTIVATION_TIME', null, null, false)
+                </statement>
+                <statement targetDBVendor="oracle" desc="Adding metrics cache table activation time">
+                  INSERT INTO rhq_system_config (id, property_key, property_value, default_property_value, fread_only)
+                  VALUES (65, 'METRICS_CACHE_ACTIVATION_TIME', null, null, 0)
+                </statement>
+              </schema-directSQL>
+            </schemaSpec>
+
         </dbupgrade>
     </target>
 </project>
